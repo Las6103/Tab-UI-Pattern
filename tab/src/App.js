@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Tabs from "./Tabs";
 
 let breweries = [];
 
@@ -17,9 +18,8 @@ class App extends Component {
     fetch(url)
       .then((unparsedData) => unparsedData.json())
       .then((parsedData) => {
-        console.log(parsedData[0].name);
         breweries = parsedData;
-        console.log(breweries[0].name);
+        console.log(breweries[0]);
         this.setState({ data: breweries[0].name });
       });
   }
@@ -61,28 +61,12 @@ class App extends Component {
         </header>
 
         <div className="container">
-          <div className="row">
-            <div className="col">
-              <button className="buttons active" onClick={this.greeneGrowlers}>
-                lorem ipsum
-              </button>
-            </div>
-            <div className="col">
-              <button className="buttons" onClick={this.brawlingBear}>
-                lorem ipsum
-              </button>
-            </div>
-            <div className="col">
-              <button className="buttons" onClick={this.elderPineBrewing}>
-                lorem ipsum
-              </button>
-            </div>
-            <div className="col">
-              <button className="buttons" onClick={this.waredacaBrewing}>
-                lorem ipsum
-              </button>
-            </div>
-          </div>
+          <Tabs
+            greeneGrowlers={this.greeneGrowlers}
+            brawlingBear={this.brawlingBear}
+            elderPineBrewing={this.elderPineBrewing}
+            waredacaBrewing={this.waredacaBrewing}
+          />
 
           <div className="content">
             <p>{this.state.data}</p>
