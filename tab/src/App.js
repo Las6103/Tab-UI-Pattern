@@ -22,23 +22,32 @@ class App extends Component {
   // }
 
   changeContent = () => {
-    this.setState( { data: this.state.data2 })
-  }
+    this.setState({ data: this.state.data2 });
+  };
 
   render() {
     return (
       <div className="main">
         <header>
-          <h2 className="title">lorme ipsum</h2>
+          <h1 className="title">lorme ipsum</h1>
         </header>
 
         <div className="container">
           <div className="row">
-            <button onClick={this.changeContent} >lorem ipsum</button>
-            <button>lorem ipsum</button>
-            <button>lorem ipsum</button>
-            <button>lorem ipsum</button>
+            <div className="col">
+              <button onClick={this.changeContent}>lorem ipsum</button>
+            </div>
+            <div className="col">
+              <button>lorem ipsum</button>
+            </div>
+            <div className="col">
+              <button>lorem ipsum</button>
+            </div>
+            <div className="col">
+              <button>lorem ipsum</button>
+            </div>
           </div>
+
           <div className="content">
             <p>{this.state.data}</p>
           </div>
