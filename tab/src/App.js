@@ -1,50 +1,86 @@
 import React, { Component } from "react";
 import "./App.css";
 
+let breweries = [];
+
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      data: "this is a thick ass test until i have an api to fill this data",
-      data2: "this is another test",
+      data: "",
     };
   }
 
-  // componentDidMount() {
-  //   const url =
-  //     "https://api.nasa.gov/planetary/earth/assets?lon=100.75&lat=1.5&date=2014-02-01&dim=0.15&api_key=ssHzMNLbArzSsguZXxRv5yXl9v5Vg9cRcOyqoacP";
-  //   fetch(url)
-  //     .then((unparsedData) => unparsedData.json())
-  //     .then((parsedData) => {
-  //       console.log(parsedData);
-  //     });
-  // }
+  componentDidMount() {
+    const url = "https://api.openbrewerydb.org/breweries?by_city=gaithersburg";
+    fetch(url)
+      .then((unparsedData) => unparsedData.json())
+      .then((parsedData) => {
+        console.log(parsedData[0].name);
+        breweries = parsedData;
+        console.log(breweries[0].name);
+        this.setState({ data: breweries[0].name });
+      });
+  }
 
-  changeContent = () => {
-    this.setState({ data: this.state.data2 });
+  greeneGrowlers = (evt) => {
+    this.setState({ data: breweries[0].name });
+    this.active(evt);
+  };
+
+  brawlingBear = (evt) => {
+    this.setState({ data: breweries[1].name });
+    this.active(evt);
+  };
+
+  elderPineBrewing = (evt) => {
+    this.setState({ data: breweries[2].name });
+    this.active(evt);
+  };
+
+  waredacaBrewing = (evt) => {
+    this.setState({ data: breweries[3].name });
+    this.active(evt);
+  };
+
+  active = (evt) => {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.classList.remove("active");
+    });
+    let isActive = evt.target.classList.add("active");
   };
 
   render() {
+    console.log(this.state.data);
     return (
       <div className="main">
         <header>
-          <h1 className="title">lorme ipsum</h1>
+          <h1 className="title">lorem ipsum</h1>
         </header>
 
         <div className="container">
           <div className="row">
             <div className="col">
-              <button onClick={this.changeContent}>lorem ipsum</button>
+              <button className="buttons active" onClick={this.greeneGrowlers}>
+                lorem ipsum
+              </button>
             </div>
             <div className="col">
-              <button>lorem ipsum</button>
+              <button className="buttons" onClick={this.brawlingBear}>
+                lorem ipsum
+              </button>
             </div>
             <div className="col">
-              <button>lorem ipsum</button>
+              <button className="buttons" onClick={this.elderPineBrewing}>
+                lorem ipsum
+              </button>
             </div>
             <div className="col">
-              <button>lorem ipsum</button>
+              <button className="buttons" onClick={this.waredacaBrewing}>
+                lorem ipsum
+              </button>
             </div>
           </div>
 
