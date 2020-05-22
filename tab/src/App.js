@@ -10,6 +10,7 @@ class App extends Component {
 
     this.state = {
       data: "",
+      breweries: "",
     };
   }
 
@@ -19,28 +20,42 @@ class App extends Component {
       .then((unparsedData) => unparsedData.json())
       .then((parsedData) => {
         breweries = parsedData;
-        console.log(breweries[0]);
-        this.setState({ data: breweries[0].name });
+        this.setState({
+          data: `The ${breweries[0].name} is located on ${breweries[0].street}. 
+          Get in contact by calling ${breweries[0].phone}.`,
+        });
       });
   }
 
   greeneGrowlers = (evt) => {
-    this.setState({ data: breweries[0].name });
+    this.setState({
+      data: `The ${breweries[0].name} is located on ${breweries[0].street}. 
+      Get in contact by calling ${breweries[0].phone}.`,
+    });
     this.active(evt);
   };
 
   brawlingBear = (evt) => {
-    this.setState({ data: breweries[1].name });
+    this.setState({
+      data: `The ${breweries[1].name} is located on ${breweries[1].street}. 
+      Get in contact by calling ${breweries[1].phone}.`,
+    });
     this.active(evt);
   };
 
   elderPineBrewing = (evt) => {
-    this.setState({ data: breweries[2].name });
+    this.setState({
+      data: `The ${breweries[2].name} is located on ${breweries[2].street}. 
+      Get in contact by calling ${breweries[2].phone}.`,
+    });
     this.active(evt);
   };
 
   waredacaBrewing = (evt) => {
-    this.setState({ data: breweries[3].name });
+    this.setState({
+      data: `The ${breweries[3].name} is located on ${breweries[3].street}. 
+      Get in contact by calling ${breweries[3].phone}.`,
+    });
     this.active(evt);
   };
 
@@ -53,7 +68,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.data);
     return (
       <div className="main">
         <header>

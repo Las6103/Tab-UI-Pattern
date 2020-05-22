@@ -11,22 +11,22 @@ function Tabs({
     <div className="row">
       <div className="col">
         <button className="buttons active" onClick={greeneGrowlers}>
-          lorem ipsum
+          Greene Growlers
         </button>
       </div>
       <div className="col">
         <button className="buttons" onClick={brawlingBear}>
-          lorem ipsum
+         Brawling Bear
         </button>
       </div>
       <div className="col">
         <button className="buttons" onClick={elderPineBrewing}>
-          lorem ipsum
+          Elder Pine Brewing
         </button>
       </div>
       <div className="col">
         <button className="buttons" onClick={waredacaBrewing}>
-          lorem ipsum
+         Waredaca Brewing
         </button>
       </div>
     </div>
