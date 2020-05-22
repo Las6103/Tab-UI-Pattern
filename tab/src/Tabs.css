@@ -22,3 +22,9 @@
   background-color: rgb(50, 50, 50);
   cursor: default;
 }
+
+@media (max-width: 670px) {
+  .row {
+    flex-direction: column;
+  }
+}

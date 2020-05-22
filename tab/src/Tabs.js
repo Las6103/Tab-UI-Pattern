@@ -16,7 +16,7 @@ function Tabs({
       </div>
       <div className="col">
         <button className="buttons" onClick={brawlingBear}>
-         Brawling Bear
+          Brawling Bear
         </button>
       </div>
       <div className="col">
@@ -26,7 +26,7 @@ function Tabs({
       </div>
       <div className="col">
         <button className="buttons" onClick={waredacaBrewing}>
-         Waredaca Brewing
+          Waredaca Brewing
         </button>
       </div>
     </div>

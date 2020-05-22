@@ -21,8 +21,23 @@ header {
 }
 
 p {
-    font-size: 2rem;
-    width: 80%;
-    margin: 0 auto;
-    padding: 2rem 0;
+  font-size: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+@media (max-width: 1120px) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 730px) {
+  .container {
+    width: 90%;
+  }
 }

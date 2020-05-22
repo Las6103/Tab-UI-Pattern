@@ -70,9 +70,8 @@ class App extends Component {
     return (
       <div className="main">
         <header>
-          <h1 className="title">lorem ipsum</h1>
+          <h1 className="title">Breweries in Gaithersburg</h1>
         </header>
-
         <div className="container">
           <Tabs
             greeneGrowlers={this.greeneGrowlers}
