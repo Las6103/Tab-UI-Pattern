@@ -44,8 +44,7 @@ class App extends Component {
 
   elderPineBrewing = (evt) => {
     this.setState({
-      data: `The ${breweries[2].name} is located on ${breweries[2].street}. 
-      Get in contact by calling ${breweries[2].phone}.`,
+      data: `The ${breweries[2].name} is located on ${breweries[2].street}.`,
     });
     this.active(evt);
   };
